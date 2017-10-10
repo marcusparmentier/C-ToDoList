@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using ToDoLists.Models;
-using System.Collections.Generic;
+
 
 namespace ToDoLists.Controllers
 {
@@ -17,6 +18,12 @@ namespace ToDoLists.Controllers
         {
           List<string> allTasks = Task.GetAll();
           return View(allTasks);
+        }
+        [HttpPost("/task/list/clear")]
+        public ActionResult TaskListClear()
+        {
+            Task.ClearAll();
+            return View();
         }
         [HttpPost("/task/create")]
         public ActionResult CreateTask()

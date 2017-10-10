@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace ToDoLists.Models
 {
@@ -26,6 +27,10 @@ namespace ToDoLists.Models
     public void Save()
     {
       _instances.Add(_description);
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }

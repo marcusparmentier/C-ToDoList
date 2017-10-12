@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace ToDoLists.Models
 {
   public class Category
   {
@@ -25,6 +25,14 @@ namespace ToDoList.Models
     {
       return _id;
     }
+    public List<Task> GetTasks()
+    {
+      return _tasks;
+    }
+    public void AddTask(Task task)
+    {
+      _tasks.Add(task);
+    }
     public static List<Category> GetAll()
     {
       return _instances;
@@ -36,14 +44,6 @@ namespace ToDoList.Models
     public static Category Find(int searchId)
     {
       return _instances[searchId-1];
-    }
-    public List<Task> GetTasks()
-    {
-      return _tasks;
-    }
-    public void AddTask(Task task)
-    {
-      _tasks.Add(task);
     }
   }
 }
